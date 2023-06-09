@@ -1,0 +1,5 @@
+list_firstname = ['Tom', 'Brad', 'Margot']
+list_lastname = ['Cruise', 'Pitt', 'Robbie']
+
+full_name = [first + ' ' + last for first, last in zip(list_firstname, list_lastname)]
+print(full_name)
