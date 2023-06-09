@@ -1,0 +1,27 @@
+def output_dict(date, quarter):
+    year = int(date[:4])
+    month = int(date[4:])
+
+    previous_month = f"{year-1}{month-1:02}" if month != 1 else f"{year-1}12"
+
+    previous_quarter_number = int(quarter[1]) - 1
+    previous_quarter = f"Q{previous_quarter_number}_{year-1}" if quarter != 'Q1' else f"Q4_{year-1}"
+
+    one_year_from_previous_month = f"{year+1}{previous_month[4:]}"
+    
+    quardo = f"{previous_quarter[:2]}_{previous_month}"
+
+    output = {
+        'previous_month': previous_month,
+        'previous_quarter': previous_quarter,
+        'One_year_from_previous_month': one_year_from_previous_month,
+        'QUARDO': quardo
+    }
+
+    return output
+
+date = "202209"
+quarter = "Q3"
+
+output = output_dict(date, quarter)
+print(output)
