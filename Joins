@@ -1,0 +1,38 @@
+CREATE TABLE TableA (
+  ColumnA INT
+);
+INSERT INTO TableA (ColumnA) VALUES
+(1),
+(2),
+(NULL),
+(3),
+(2),
+(4),
+(4),
+(6),
+(10);
+CREATE TABLE TableB (
+  ColumnB INT
+);
+INSERT INTO TableB (ColumnB) VALUES
+(7),
+(NULL),
+(NULL),
+(3),
+(4),
+(4),
+(2),
+(2),
+(8);
+SELECT *
+FROM TableA
+INNER JOIN TableB ON TableA.ColumnA = TableB.ColumnB;
+SELECT *
+FROM TableA
+RIGHT JOIN TableB ON TableA.ColumnA = TableB.ColumnB;
+SELECT *
+FROM TableA
+LEFT JOIN TableB ON TableA.ColumnA = TableB.ColumnB;
+SELECT *
+FROM TableA
+FULL OUTER JOIN TableB ON TableA.ColumnA = TableB.ColumnB;
